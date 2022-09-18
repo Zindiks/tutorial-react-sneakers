@@ -159,7 +159,6 @@ export default function App() {
         setCartItems,
         setOrders,
         isItemFav,
-        setOrders,
       }}
     >
       <div className="wrapper clear">

@@ -1,0 +1,40 @@
+.cartEmpty{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.greenButton {
+    width: 300px;
+    height: 55px;
+    background-color: #9dd558;
+    border-radius: 18px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+
+    transition: background 0.5s ease-in-out;
+    img {
+        position: absolute;
+        left: 40px;
+        top: 20px;
+        transition: transform 0.2s ease-in-out;
+        rotate: 180deg ;
+      }
+  
+    &:hover {
+      background: lighten(#9dd558, 5%);
+      img {
+        transform: translateX(10px);
+      }
+    }
+  
+    &:active {
+      background: darken(#9dd558, 10%);
+    }
+  }
+

@@ -1,0 +1,159 @@
+.overlay {
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  // backdrop-filter: blur(5px);
+}
+
+.drawer {
+  width: 420px;
+  height: 100vh;
+  right: 0;
+  background: #ffffff;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute !important;
+  overflow: auto;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .items {
+    overflow: auto;
+    margin-bottom: 40px;
+    flex: 1;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: 900;
+  }
+}
+
+.header {
+  button {
+    margin: 0;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    // background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.removeBtn {
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.cartTotalBlock {
+  div {
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dashed #dfdfdf;
+    position: relative;
+    top: -4px;
+    margin: 0 7px;
+  }
+
+  ul {
+    margin-bottom: 40px !important;
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+  }
+
+  .greenButton {
+    position: relative;
+
+    &:disabled{
+      animation: button-loading 0.8s ease-in-out infinite;
+    }
+
+    &:hover {
+      img {
+        transform: translateX(10px);
+      }
+    }
+
+    img {
+      position: absolute;
+      right: 40px;
+      top: 20px;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+}
+
+.greenButton {
+  width: 100%;
+  height: 55px;
+  background-color: #9dd558;
+  border-radius: 18px;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+
+  &:disabled{
+    background-color: #bebebe;
+    cursor: default;
+  }
+
+  
+
+  &:hover {
+    background: lighten(#9dd558, 5%);
+  }
+
+  &:active {
+    background: darken(#9dd558, 10%);
+  }
+}
+
+
+
+@media only screen and (max-width: 580px) {
+    .drawer{
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+    }
+
+
+
+
+}
+
+
+@keyframes button-loading {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.7;
+  }
+  100%{
+    opacity: 1;
+  }
+}
